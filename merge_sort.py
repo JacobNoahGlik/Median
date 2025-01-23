@@ -12,7 +12,9 @@ def merge(arr1: List[float], arr2: List[float]) -> List[float]:
     
     return resulting_arr + arr1[c1:] + arr2[c2:]
 def find_median(arr1: List[float], arr2: List[float]) -> float:
-    resulting_median, _ = median(merge(arr1, arr2))
+    merged_arr = merge(arr1, arr2)
+    # print(f'median@index={len(merged_arr) / 2 - 0.5}, {merged_arr=}')
+    resulting_median, _ = median(merged_arr)
     return resulting_median
 
 def median(array: List[float]) -> Tuple[float, int]:
